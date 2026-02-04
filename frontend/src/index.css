@@ -1,0 +1,631 @@
+/* ==========================
+   ROOT VARIABLES
+========================== */
+:root {
+  --green-dark: #166534;
+  --green: #16a34a;
+  --green-light: #22c55e;
+  --gold: #facc15;
+
+  --gray-bg: #f5f7f9;
+  --gray-text: #374151;
+  --gray-dark: #1f2937;
+
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.12);
+  --shadow-hover: 0 25px 60px rgba(0,0,0,0.2);
+  
+  --container-padding: 24px;
+  --section-spacing: 32px;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--gray-bg);
+  color: var(--gray-text);
+  min-height: 100vh;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+.navbar {
+  background: var(--green-dark);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-buttons button {
+  background: white;
+  color: var(--green-dark);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.nav-buttons button:hover {
+  background: var(--green-light);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==========================
+   MAIN CONTENT CONTAINER
+========================== */
+.main-content {
+  padding: 0 var(--container-padding);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+.hero {
+  background: linear-gradient(135deg, var(--green-dark), #14532d);
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+  color: white;
+  margin: var(--section-spacing) 0;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 32px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-buttons button {
+  border-radius: 50px;
+  padding: 14px 28px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 16px;
+  min-width: 200px;
+}
+
+.primary-btn {
+  background: white;
+  color: var(--green-dark);
+}
+
+.primary-btn:hover {
+  background: var(--green-light);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.secondary-btn {
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
+.secondary-btn:hover {
+  background: white;
+  color: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==========================
+   STATS DASHBOARD
+========================== */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin: var(--section-spacing) 0;
+  width: 100%;
+}
+
+.stat-card {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.stat-card h2 {
+  font-size: 32px;
+  margin-top: 8px;
+  color: var(--green-dark);
+}
+
+.stat-card p {
+  font-size: 16px;
+  color: var(--gray-text);
+  opacity: 0.8;
+}
+
+.stat-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: var(--green-dark);
+}
+
+.green { border-left: 6px solid var(--green); }
+.blue { border-left: 6px solid #2563eb; }
+.purple { border-left: 6px solid #7c3aed; }
+.orange { border-left: 6px solid #f97316; }
+
+/* ==========================
+   SECTION WRAPPER
+========================== */
+.section {
+  margin: var(--section-spacing) 0;
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.view-all {
+  background: var(--green-dark);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.view-all:hover {
+  background: var(--green);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==========================
+   DRIVE GRID
+========================== */
+.drives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ==========================
+   DRIVE CARD
+========================== */
+.drive-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.drive-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ==========================
+   DRIVE HEADER
+========================== */
+.drive-header {
+  padding: 32px;
+  color: white;
+  position: relative;
+  min-height: 180px;
+}
+
+.google-gradient { background: linear-gradient(135deg, #2563eb, #22c55e); }
+.amazon-gradient { background: linear-gradient(135deg, #16a34a, #15803d); }
+.microsoft-gradient { background: linear-gradient(135deg, #7c3aed, #9333ea); }
+.infosys-gradient { background: linear-gradient(135deg, #15803d, #22c55e); }
+.facebook-gradient { background: linear-gradient(135deg, #1e293b, #334155); }
+.ibm-gradient { background: linear-gradient(135deg, #054ada, #1c64f2); }
+.tcs-gradient { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+.zoho-gradient { background: linear-gradient(135deg, #ea580c, #dc2626); }
+
+.drive-date {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: white;
+  color: var(--green-dark);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.drive-company {
+  margin-top: 32px;
+}
+
+.drive-company-name {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.drive-role {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-top: 6px;
+}
+
+/* ==========================
+   DRIVE BODY
+========================== */
+.drive-body {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.drive-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.drive-package {
+  background: #e8f7ee;
+  color: var(--green-dark);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.drive-time {
+  background: #e8effe;
+  color: #1e40af;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.drive-description {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: var(--gray-text);
+  opacity: 0.9;
+}
+
+/* ==========================
+   DRIVE FOOTER
+========================== */
+.drive-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.drive-eligibility {
+  font-size: 14px;
+  color: var(--gray-text);
+  font-weight: 500;
+  flex: 1;
+  min-width: 220px;
+}
+
+.drive-btn {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  text-align: center;
+}
+
+.drive-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(22, 101, 52, 0.4);
+}
+
+.drive-btn-gray {
+  background: var(--gray-dark);
+}
+
+.drive-btn-gray:hover {
+  background: #111827;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+@media (max-width: 1200px) {
+  :root {
+    --container-padding: 20px;
+    --section-spacing: 28px;
+  }
+  
+  .drives-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .drives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 16px;
+    --section-spacing: 24px;
+  }
+  
+  .hero h1 {
+    font-size: 28px;
+  }
+  
+  .hero p {
+    font-size: 16px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .hero-buttons button {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 24px;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .drives-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .dashboard {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .nav-title {
+    font-size: 16px;
+    max-width: 200px;
+  }
+  
+  .nav-buttons button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  
+  .nav-buttons button span {
+    display: none;
+  }
+  
+  .nav-buttons button svg {
+    font-size: 18px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --container-padding: 12px;
+    --section-spacing: 20px;
+  }
+  
+  .navbar {
+    padding: 14px 16px;
+  }
+  
+  .nav-title {
+    font-size: 14px;
+    max-width: 180px;
+  }
+  
+  .nav-buttons {
+    gap: 8px;
+  }
+  
+  .nav-buttons button {
+    padding: 8px 12px;
+    font-size: 0;
+  }
+  
+  .nav-buttons button svg {
+    font-size: 16px;
+  }
+  
+  .hero {
+    padding: 40px 24px;
+  }
+  
+  .drive-header {
+    padding: 24px;
+    min-height: 160px;
+  }
+  
+  .drive-body {
+    padding: 20px;
+  }
+  
+  .drive-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .drive-btn {
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  .drive-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .drive-eligibility {
+    min-width: 100%;
+  }
+  
+  .stat-card {
+    padding: 24px;
+  }
+  
+  .stat-card h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --container-padding: 10px;
+  }
+  
+  .hero {
+    padding: 32px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 24px;
+  }
+  
+  .hero p {
+    font-size: 15px;
+  }
+  
+  .drive-card {
+    border-radius: 16px;
+  }
+}
+
+/* ==========================
+   UTILITY CLASSES
+========================== */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 4px; }
+.mt-2 { margin-top: 8px; }
+.mt-3 { margin-top: 12px; }
+.mt-4 { margin-top: 16px; }
+
+.mb-1 { margin-bottom: 4px; }
+.mb-2 { margin-bottom: 8px; }
+.mb-3 { margin-bottom: 12px; }
+.mb-4 { margin-bottom: 16px; }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
