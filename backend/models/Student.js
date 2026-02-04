@@ -2,24 +2,26 @@ const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema(
   {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     studentId: {
       type: String,
       required: true,
-      unique: true
-    },
-    name: {
-      type: String,
-      required: true
+      unique: true,
     },
     department: {
       type: String,
-      required: true
+      enum: ["CSE", "IT", "ECE", "EEE", "MECH", "CIVIL"],
+      required: true,
     },
-    companyPlaced: {
+    company: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Company",
-      default: null
-    }
+      required: true,
+    },
   },
   { timestamps: true }
 );

@@ -1,6 +1,6 @@
 const Student = require("../models/Student");
 
-exports.addStudent = async (req, res) => {
+exports.addPlacedStudent = async (req, res) => {
   try {
     const student = await Student.create(req.body);
     res.status(201).json(student);
@@ -11,8 +11,8 @@ exports.addStudent = async (req, res) => {
 
 exports.getPlacedStudents = async (req, res) => {
   try {
-    const students = await Student.find({ companyPlaced: { $ne: null } });
-    res.json(students);
+    const students = await Student.find().populate("company");
+    res.status(200).json(students);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
