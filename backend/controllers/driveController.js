@@ -29,3 +29,12 @@ exports.getPastDrives = async (req, res) => {
   const drives = await Drive.find({ date: { $lt: today } }).populate("company");
   res.json(drives);
 };
+
+exports.deleteDrive = async (req, res) => {
+  try {
+    await Drive.findByIdAndDelete(req.params.id);
+    res.json({ message: "Drive deleted" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
