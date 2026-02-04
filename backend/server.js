@@ -13,8 +13,7 @@ connectDB();
 app.use("/api/companies", require("./routes/companyRoutes"));
 app.use("/api/drives", require("./routes/driveRoutes"));
 app.use("/api/students", require("./routes/studentRoutes"));
-app.use("/api/students", require("./routes/studentRoutes"));
-
+app.use("/api/dashboard", require("./routes/dashboardRoutes"));
 
 app.get("/", (req, res) => {
   res.send("Placement Management Backend Running");
