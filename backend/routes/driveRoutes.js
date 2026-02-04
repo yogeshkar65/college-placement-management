@@ -5,12 +5,14 @@ const {
   addDrive,
   getAllDrives,
   getUpcomingDrives,
-  getPastDrives
+  getPastDrives,
+  deleteDrive
 } = require("../controllers/driveController");
 
 router.post("/", addDrive);
 router.get("/", getAllDrives);
 router.get("/upcoming", getUpcomingDrives);
 router.get("/past", getPastDrives);
+router.delete("/:id", deleteDrive);
 
 module.exports = router;
