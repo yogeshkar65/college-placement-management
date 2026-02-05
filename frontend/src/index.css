@@ -11,9 +11,9 @@
   --gray-text: #374151;
   --gray-dark: #1f2937;
 
-  --shadow-soft: 0 10px 30px rgba(0,0,0,0.12);
-  --shadow-hover: 0 25px 60px rgba(0,0,0,0.2);
-  
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.2);
+
   --container-padding: 24px;
   --section-spacing: 32px;
 }
@@ -128,7 +128,8 @@ body {
   flex-wrap: wrap;
 }
 
-.hero-buttons button {
+.hero-buttons button,
+.hero-buttons a {
   border-radius: 50px;
   padding: 14px 28px;
   font-weight: 600;
@@ -137,6 +138,7 @@ body {
   transition: all 0.25s ease;
   font-size: 16px;
   min-width: 200px;
+  display: inline-block;
 }
 
 .primary-btn {
@@ -205,10 +207,21 @@ body {
   color: var(--green-dark);
 }
 
-.green { border-left: 6px solid var(--green); }
-.blue { border-left: 6px solid #2563eb; }
-.purple { border-left: 6px solid #7c3aed; }
-.orange { border-left: 6px solid #f97316; }
+.green {
+  border-left: 6px solid var(--green);
+}
+
+.blue {
+  border-left: 6px solid #2563eb;
+}
+
+.purple {
+  border-left: 6px solid #7c3aed;
+}
+
+.orange {
+  border-left: 6px solid #f97316;
+}
 
 /* ==========================
    SECTION WRAPPER
@@ -292,14 +305,37 @@ body {
   min-height: 180px;
 }
 
-.google-gradient { background: linear-gradient(135deg, #2563eb, #22c55e); }
-.amazon-gradient { background: linear-gradient(135deg, #16a34a, #15803d); }
-.microsoft-gradient { background: linear-gradient(135deg, #7c3aed, #9333ea); }
-.infosys-gradient { background: linear-gradient(135deg, #15803d, #22c55e); }
-.facebook-gradient { background: linear-gradient(135deg, #1e293b, #334155); }
-.ibm-gradient { background: linear-gradient(135deg, #054ada, #1c64f2); }
-.tcs-gradient { background: linear-gradient(135deg, #0d9488, #14b8a6); }
-.zoho-gradient { background: linear-gradient(135deg, #ea580c, #dc2626); }
+.google-gradient {
+  background: linear-gradient(135deg, #2563eb, #22c55e);
+}
+
+.amazon-gradient {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.microsoft-gradient {
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
+}
+
+.infosys-gradient {
+  background: linear-gradient(135deg, #15803d, #22c55e);
+}
+
+.facebook-gradient {
+  background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+.ibm-gradient {
+  background: linear-gradient(135deg, #054ada, #1c64f2);
+}
+
+.tcs-gradient {
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
+}
+
+.zoho-gradient {
+  background: linear-gradient(135deg, #ea580c, #dc2626);
+}
 
 .drive-date {
   position: absolute;
@@ -424,6 +460,19 @@ body {
 }
 
 /* ==========================
+   TABLE STYLES (NEW)
+========================== */
+tr {
+  transition: background-color 0.2s ease;
+}
+
+tr:hover {
+  background-color: #f0fdf4 !important;
+  /* Light green hover */
+  cursor: pointer;
+}
+
+/* ==========================
    RESPONSIVE DESIGN
 ========================== */
 @media (max-width: 1200px) {
@@ -431,7 +480,7 @@ body {
     --container-padding: 20px;
     --section-spacing: 28px;
   }
-  
+
   .drives-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
@@ -442,7 +491,7 @@ body {
   .drives-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .dashboard {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -453,61 +502,61 @@ body {
     --container-padding: 16px;
     --section-spacing: 24px;
   }
-  
+
   .hero h1 {
     font-size: 28px;
   }
-  
+
   .hero p {
     font-size: 16px;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
     align-items: center;
     gap: 16px;
   }
-  
+
   .hero-buttons button {
     width: 100%;
     max-width: 320px;
     padding: 14px 24px;
   }
-  
+
   .section-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
-  
+
   .drives-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .dashboard {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .nav-title {
     font-size: 16px;
     max-width: 200px;
   }
-  
+
   .nav-buttons button {
     padding: 8px 16px;
     font-size: 12px;
   }
-  
+
   .nav-buttons button span {
     display: none;
   }
-  
+
   .nav-buttons button svg {
     font-size: 18px;
   }
-  
+
   .section-title {
     font-size: 24px;
   }
@@ -518,66 +567,66 @@ body {
     --container-padding: 12px;
     --section-spacing: 20px;
   }
-  
+
   .navbar {
     padding: 14px 16px;
   }
-  
+
   .nav-title {
     font-size: 14px;
     max-width: 180px;
   }
-  
+
   .nav-buttons {
     gap: 8px;
   }
-  
+
   .nav-buttons button {
     padding: 8px 12px;
     font-size: 0;
   }
-  
+
   .nav-buttons button svg {
     font-size: 16px;
   }
-  
+
   .hero {
     padding: 40px 24px;
   }
-  
+
   .drive-header {
     padding: 24px;
     min-height: 160px;
   }
-  
+
   .drive-body {
     padding: 20px;
   }
-  
+
   .drive-footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
-  
+
   .drive-btn {
     width: 100%;
     min-width: 100%;
   }
-  
+
   .drive-meta {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .drive-eligibility {
     min-width: 100%;
   }
-  
+
   .stat-card {
     padding: 24px;
   }
-  
+
   .stat-card h2 {
     font-size: 28px;
   }
@@ -587,19 +636,19 @@ body {
   :root {
     --container-padding: 10px;
   }
-  
+
   .hero {
     padding: 32px 20px;
   }
-  
+
   .hero h1 {
     font-size: 24px;
   }
-  
+
   .hero p {
     font-size: 15px;
   }
-  
+
   .drive-card {
     border-radius: 16px;
   }
@@ -612,20 +661,174 @@ body {
   text-align: center;
 }
 
-.mt-1 { margin-top: 4px; }
-.mt-2 { margin-top: 8px; }
-.mt-3 { margin-top: 12px; }
-.mt-4 { margin-top: 16px; }
+.mt-1 {
+  margin-top: 4px;
+}
 
-.mb-1 { margin-bottom: 4px; }
-.mb-2 { margin-bottom: 8px; }
-.mb-3 { margin-bottom: 12px; }
-.mb-4 { margin-bottom: 16px; }
+.mt-2 {
+  margin-top: 8px;
+}
 
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.gap-2 { gap: 8px; }
-.gap-4 { gap: 16px; }
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+/* ==========================
+   PARTNER CARD
+========================== */
+.partner-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.partner-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ==========================
+   ADMIN STAT CARD
+========================== */
+.admin-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Border colors for admin cards */
+.admin-card-green {
+  border-left: 5px solid #22c55e;
+}
+
+.admin-card-blue {
+  border-left: 5px solid #3b82f6;
+}
+
+.admin-card-purple {
+  border-left: 5px solid #a855f7;
+}
+
+.admin-card-orange {
+  border-left: 5px solid #f97316;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.fade-in-fast {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Button loading state */
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
