@@ -17,3 +17,12 @@ exports.getPlacedStudents = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+exports.deleteStudent = async (req, res) => {
+  try {
+    await Student.findByIdAndDelete(req.params.id);
+    res.json({ message: "Student deleted" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
