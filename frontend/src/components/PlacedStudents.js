@@ -9,7 +9,6 @@ import toast from 'react-hot-toast';
 function PlacedStudents({ isPreview = false }) {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [deleting, setDeleting] = useState(false);
   const navigate = useNavigate();
   const isAdmin = localStorage.getItem('isAdmin') === 'true';
 
@@ -33,7 +32,6 @@ function PlacedStudents({ isPreview = false }) {
   };
 
   const handleDelete = async (id) => {
-    setDeleting(true);
     try {
       await API.delete(`/students/${id}`);
       toast.success('Student deleted successfully!');
@@ -41,8 +39,6 @@ function PlacedStudents({ isPreview = false }) {
     } catch (error) {
       console.error('Error deleting student:', error);
       toast.error('Failed to delete student');
-    } finally {
-      setDeleting(false);
     }
   };
 

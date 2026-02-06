@@ -13,7 +13,6 @@ function AddCompany() {
         package: '',
         status: 'upcoming'
     });
-    const [submitting, setSubmitting] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {

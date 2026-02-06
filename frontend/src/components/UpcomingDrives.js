@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaTrash, FaArrowLeft } from 'react-icons/fa';
 import API from '../services/api';
-import Modal from './Modal';
 import { ShimmerCard } from './Shimmer';
 import EmptyState from './EmptyState';
 import toast from 'react-hot-toast';

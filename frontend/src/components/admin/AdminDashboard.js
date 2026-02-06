@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { FaCalendarAlt, FaHistory, FaUserGraduate, FaBuilding, FaPlus, FaSignOutAlt, FaHandSparkles } from "react-icons/fa";
+import { FaCalendarAlt, FaHistory, FaUserGraduate, FaBuilding } from "react-icons/fa";
 import API from '../../services/api';
 import Shimmer from '../Shimmer';
 
@@ -36,10 +36,6 @@ function AdminDashboard() {
         fetchStats();
     }, [navigate, location.pathname]); // Re-fetch on navigation changes (like after adding items)
 
-    const handleLogout = () => {
-        localStorage.removeItem('isAdmin');
-        navigate('/');
-    };
 
     const isOverview = location.pathname === '/admin/dashboard' || location.pathname === '/admin/dashboard/';
 
