@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaTrash, FaArrowLeft } from 'react-icons/fa';
 import API from '../services/api';
+import { ShimmerTable } from './Shimmer';
 import EmptyState from './EmptyState';
 import toast from 'react-hot-toast';
 
@@ -56,7 +57,16 @@ function PlacedStudents({ isPreview = false }) {
     }
   };
 
-  if (loading) return <div className="text-center mt-4">Loading placed students...</div>;
+  if (loading) {
+    return (
+      <section className="section">
+        <div className="section-header">
+          <h2 className="section-title">Placed Students</h2>
+        </div>
+        <ShimmerTable />
+      </section>
+    );
+  }
 
   return (
     <section className="section">

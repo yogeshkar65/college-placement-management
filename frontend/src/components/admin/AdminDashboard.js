@@ -2,6 +2,7 @@ import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { FaCalendarAlt, FaHistory, FaUserGraduate, FaBuilding, FaPlus, FaSignOutAlt, FaHandSparkles } from "react-icons/fa";
 import API from '../../services/api';
+import Shimmer from '../Shimmer';
 
 function AdminDashboard() {
     const navigate = useNavigate();
@@ -71,7 +72,7 @@ function AdminDashboard() {
                     <div className="admin-stat-card admin-card-green">
                         <div>
                             <p style={{ color: '#6b7280', fontSize: '14px', margin: 0, fontWeight: '500' }}>Upcoming Drives</p>
-                            <h2 style={{ fontSize: '32px', color: '#166534', margin: '5px 0 0 0' }}>{loading ? '...' : stats.upcomingDrives}</h2>
+                            <h2 style={{ fontSize: '32px', color: '#166534', margin: '5px 0 0 0' }}>{loading ? <Shimmer height="40px" width="60px" /> : stats.upcomingDrives}</h2>
                         </div>
                         <div style={{ background: '#f0fdf4', padding: '12px', borderRadius: '10px' }}>
                             <FaCalendarAlt size={24} color="#166534" />
@@ -84,7 +85,7 @@ function AdminDashboard() {
                     <div className="admin-stat-card admin-card-blue">
                         <div>
                             <p style={{ color: '#6b7280', fontSize: '14px', margin: 0, fontWeight: '500' }}>Past Drives</p>
-                            <h2 style={{ fontSize: '32px', color: '#1d4ed8', margin: '5px 0 0 0' }}>{loading ? '...' : stats.pastDrives}</h2>
+                            <h2 style={{ fontSize: '32px', color: '#1d4ed8', margin: '5px 0 0 0' }}>{loading ? <Shimmer height="40px" width="60px" /> : stats.pastDrives}</h2>
                         </div>
                         <div style={{ background: '#eff6ff', padding: '12px', borderRadius: '10px' }}>
                             <FaHistory size={24} color="#1d4ed8" />
@@ -97,7 +98,7 @@ function AdminDashboard() {
                     <div className="admin-stat-card admin-card-purple">
                         <div>
                             <p style={{ color: '#6b7280', fontSize: '14px', margin: 0, fontWeight: '500' }}>Placed Students</p>
-                            <h2 style={{ fontSize: '32px', color: '#7e22ce', margin: '5px 0 0 0' }}>{loading ? '...' : stats.placedStudents}</h2>
+                            <h2 style={{ fontSize: '32px', color: '#7e22ce', margin: '5px 0 0 0' }}>{loading ? <Shimmer height="40px" width="60px" /> : stats.placedStudents}</h2>
                         </div>
                         <div style={{ background: '#f3e8ff', padding: '12px', borderRadius: '10px' }}>
                             <FaUserGraduate size={24} color="#7e22ce" />
@@ -110,7 +111,7 @@ function AdminDashboard() {
                     <div className="admin-stat-card admin-card-orange">
                         <div>
                             <p style={{ color: '#6b7280', fontSize: '14px', margin: 0, fontWeight: '500' }}>Companies</p>
-                            <h2 style={{ fontSize: '32px', color: '#c2410c', margin: '5px 0 0 0' }}>{loading ? '...' : stats.companies}</h2>
+                            <h2 style={{ fontSize: '32px', color: '#c2410c', margin: '5px 0 0 0' }}>{loading ? <Shimmer height="40px" width="60px" /> : stats.companies}</h2>
                         </div>
                         <div style={{ background: '#ffedd5', padding: '12px', borderRadius: '10px' }}>
                             <FaBuilding size={24} color="#c2410c" />

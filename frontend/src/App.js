@@ -12,11 +12,13 @@ import AddDrive from "./components/admin/forms/AddDrive";
 import AddStudent from "./components/admin/forms/AddStudent";
 import { Toaster } from 'react-hot-toast';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import "./index.css";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Toaster position="top-right" reverseOrder={false} />
       <Navbar />
       <div className="main-content">
